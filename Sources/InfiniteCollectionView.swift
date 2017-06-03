@@ -26,6 +26,7 @@ import UIKit
     @objc optional func scrollView(_ scrollView: UIScrollView, pageIndex: Int)
     @objc optional func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     @objc optional func scrollViewDidEndDragging(_ scrollView: UIScrollView)
+    @objc optional func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
 }
 
 open class InfiniteCollectionView: UICollectionView {
@@ -149,5 +150,8 @@ extension InfiniteCollectionView: UICollectionViewDelegate {
     }
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         infiniteDelegate?.scrollViewDidEndDragging?(scrollView)
+    }
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        infiniteDelegate?.scrollViewDidEndDecelerating?(scrollView)
     }
 }
