@@ -29,6 +29,7 @@ import UIKit
     @objc optional func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
 }
 
+@objcMembers
 open class InfiniteCollectionView: UICollectionView {
     open weak var infiniteDataSource: InfiniteCollectionViewDataSource?
     open weak var infiniteDelegate: InfiniteCollectionViewDelegate?
